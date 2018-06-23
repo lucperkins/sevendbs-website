@@ -1,4 +1,20 @@
 title: Seven Databases in Seven Weeks
 author: Luc Perkins, Eric Redmond, and Jim Wilson
+theme: vex-hugo
+watch: true
 params:
   description: A guide to modern databases and the NoSQL movement
+  navbar:
+    logo: Seven Databases in Seven Weeks
+    menu:
+    - text: Databases
+      link: ../databases
+    
+  header:
+    title: Seven Databases in Seven Weeks
+    text: A guide to modern databases and the NoSQL movement
+    button:
+      link: ../buy
+      text: Buy it now!
+    image:
+      #path: /img/sevendbs.jpg
