@@ -1,7 +1,9 @@
+{{- $title := .Site.Title -}}
+{{- $description := .Site.Params.description -}}
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>{{ $title }} &ndash; {{ $description }}</title>
   </head>
   <body>
     {{ block "main" . }}
