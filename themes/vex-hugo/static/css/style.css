@@ -2,6 +2,17 @@
     Custom Css
 --*/
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+  height: 100%;
+}
+
 .book-img {
   border: 1px solid gray;
 }
@@ -18,7 +29,7 @@ body {
   font-weight: 300;
   line-height: 25px;
   color: #3b4045;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Muli", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
 h1,

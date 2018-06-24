@@ -1,2 +1,2 @@
 - name: Redis
-  type: key-value store
+  text: Something about Redis

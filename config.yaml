@@ -6,9 +6,6 @@ params:
   description: A Guide to Modern Databases and the NoSQL movement
   navbar:
     logo: Seven Databases in Seven Weeks
-    menu:
-    - text: Databases
-      link: ../databases
   header:
     title: Seven Databases in Seven Weeks
     subtitle: A guide to modern databases and the NoSQL movement
@@ -20,8 +17,10 @@ params:
     - link: https://pragprog.com/book/pwrdata/seven-databases-in-seven-weeks-second-edition
       text: PragProg
       class: pragprog
-    - link: /
+    - link: http://www.powells.com/book/-9781680502534
       text: Powell's
       class: powells
     image:
       path: /img/sevendbs.jpg
+  databases:
+  - name: PostgreSQL
