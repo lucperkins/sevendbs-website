@@ -13,7 +13,7 @@
           <div class="col-md-6">
             <div class="block">
               <h1>{{ .title }}</h1>
-              <h2>{{ .subtitle }}</h2>
+              <h2>{{ .subtitle | markdownify }}</h2>
               <p class="header-text">{{ .text | markdownify }}</p>
             {{- range .buttons }}
             <a class="btn btn-{{ .class }}" href="{{ .link }}" role="button">{{ .text }}</a>

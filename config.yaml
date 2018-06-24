@@ -23,7 +23,7 @@ params:
   header:
     title: Seven Databases in Seven Weeks
     subtitle: A Guide to Modern Databases and the NoSQL movement
-    text: A hands-on guide to PostgreSQL, HBase, MongoDB, CouchDB, DynamoDB, Neo4j, and Redis
+    text: A hands-on guide to PostgreSQL, HBase, MongoDB, CouchDB, DynamoDB, Neo4j, and Redis. Co-authored by [Luc Perkins](https://github.com/lucperkins), [Eric Redmond](https://github.com/coderoshi), and [Jim Wilson](https://github.com/jimbojw).
     buttons:
     - link: https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1680502530
       text: Amazon
