@@ -1,0 +1,46 @@
+{{- $cssUrl := printf "/css/%s" (index .Site.Data.assetHashes "style.css") | absURL }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Site.Title }}</title>
+    <link rel="shortcut icon" href="{{ "/favicon.ico" | absURL }}">
+    <link rel="stylesheet" href="{{ $cssUrl }}">
+  </head>
+  <body>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column is-half">
+              <img class="logo" src="{{ "/img/sevendbs.jpg" | absURL }}" width="400">
+            </div>
+            <div class="column has-text-left is-half">
+              <h1 class="title is-size-1">
+                Seven Databases
+              </h1>
+              <h3 class="title is-size-3">
+                in
+              </h3>
+              <h1 class="title is-size-1 is-spaced">
+                Seven Weeks
+              </h1>
+              <hr />
+              <h3 class="subtitle is-size-3 is-size-4-mobile db-subtitle">
+                A Guide to Modern Databases and the NoSQL Movement
+              </h3>
+              <div class="buttons">
+                <a class="button is-rounded is-large is-warning amazon">Amazon</a>
+                <a class="button is-rounded is-large is-info pragprog">PragProg</a>
+                <a class="button is-rounded is-large is-danger powells">Powell's</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {{ block "main" . }}
+    {{ end }}
+  </body>
+</html>
