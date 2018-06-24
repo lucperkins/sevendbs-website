@@ -3,18 +3,25 @@ author: Luc Perkins, Eric Redmond, and Jim Wilson
 theme: vex-hugo
 watch: true
 params:
-  description: A guide to modern databases and the NoSQL movement
+  description: A Guide to Modern Databases and the NoSQL movement
   navbar:
     logo: Seven Databases in Seven Weeks
     menu:
     - text: Databases
       link: ../databases
-    
   header:
     title: Seven Databases in Seven Weeks
-    text: A guide to modern databases and the NoSQL movement
-    button:
-      link: ../buy
-      text: Buy it now!
+    subtitle: A guide to modern databases and the NoSQL movement
+    text: A hands-on guide to PostgreSQL, HBase, MongoDB, CouchDB, DynamoDB, Neo4j, and Redis
+    buttons:
+    - link: https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1680502530
+      text: Amazon
+      class: amazon
+    - link: https://pragprog.com/book/pwrdata/seven-databases-in-seven-weeks-second-edition
+      text: PragProg
+      class: pragprog
+    - link: /
+      text: Powell's
+      class: powells
     image:
-      #path: /img/sevendbs.jpg
+      path: /img/sevendbs.jpg
