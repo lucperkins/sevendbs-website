@@ -3,7 +3,16 @@ author: Luc Perkins, Eric Redmond, and Jim Wilson
 theme: vex-hugo
 watch: true
 params:
-  description: A Guide to Modern Databases and the NoSQL movement
+  meta:
+  - name: og:title
+    content: Seven Databases in Seven Weeks
+  - name: og:description
+    content: "Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement"
+  - name: og:image
+    content: https://7dbs.io/img/sevendbs.jpg
+  - name: og:url
+    content: https://7dbs.io
+  description: A Guide to Modern Databases and the NoSQL Movement
   navbar:
     menu:
     - link: "#testimonials"
@@ -22,7 +31,7 @@ params:
       position: Senior Site Reliability Engineer, Mozilla
   header:
     title: Seven Databases in Seven Weeks
-    subtitle: A Guide to Modern Databases and the NoSQL movement
+    subtitle: A Guide to Modern Databases and the NoSQL Movement
     text: A hands-on guide to PostgreSQL, HBase, MongoDB, CouchDB, DynamoDB, Neo4j, and Redis. Co-authored by [Luc Perkins](https://github.com/lucperkins), [Eric Redmond](https://github.com/coderoshi), and [Jim Wilson](https://github.com/jimbojw).
     buttons:
     - link: https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1680502530
