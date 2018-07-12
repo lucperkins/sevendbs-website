@@ -1,5 +1,5 @@
 {{- $cssOpts := (dict "targetPath" "css/style.css") }}
-{{- $css := resources.Get "sass/style.sass" | toCSS $cssOpts | fingerprint }}
+{{- $css := resources.Get "sass/style.sass" | toCSS $cssOpts | minify | fingerprint }}
 <!DOCTYPE html>
 <html>
   <head>
