@@ -4,7 +4,7 @@ command = "hugo"
 
 [context.production.environment]
 HUGO_BASEURL = "https://7dbs.io"
-HUGO_VERSION = "0.43-DEV-0EFD3748"
+HUGO_VERSION = "0.44"
 
 [context.deploy-preview]
 command = "hugo -b $DEPLOY_PRIME_URL"
