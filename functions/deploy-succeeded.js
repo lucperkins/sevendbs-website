@@ -3,8 +3,9 @@ const https = require('https');
 const handle = (res) => {
   const headers = res.headers;
 
-  headers.forEach((header) => {
-    console.log(header);
+  Object.keys(headers).forEach((key) => {
+    const header = headers[key];
+    console.log("Header: " + header);
   });
 }
 
