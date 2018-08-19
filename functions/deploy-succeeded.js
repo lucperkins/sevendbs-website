@@ -27,12 +27,14 @@ exports.handler = (event, context, callback) => {
     const headers = res.headers;
 
     if ("X-Robots-Tag" in headers) {
+      console.error("X-Robots-Tag header present");
       callback(null, {
         statusCode: 500,
         body: `The page ${url} contains the "X-Robots-Tag" header`
       });
 
     } else {
+      console.log("All clear!");
       callback(null, {
         statusCode: 200,
         body: "All clear!"
