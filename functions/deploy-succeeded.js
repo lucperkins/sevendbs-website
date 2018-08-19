@@ -23,6 +23,12 @@ const handleError = (e) => {
 }
 
 exports.handler = (event, context, callback) => {
+  console.log("Printing event:");
+  console.log(event);
+
+  console.log("Printing context:")
+  console.log(context);
+
   https.get(url, (res) => {
     const headers = res.headers;
 
