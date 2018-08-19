@@ -24,11 +24,7 @@ const handleError = (e) => {
 
 exports.handler = (event, context, callback) => {
   console.log("Printing event:");
-  console.log(event.payload);
-  console.log(event.site);
-
-  console.log("Printing context:")
-  console.log(context);
+  console.log(event);
 
   https.get(url, (res) => {
     const headers = res.headers;
