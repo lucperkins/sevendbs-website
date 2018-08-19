@@ -23,5 +23,20 @@ const handleError = (e) => {
 }
 
 exports.handler = (event, context, callback) => {
-  https.get(url, handleResponse).on('error', handleError);
+  https.get(url, (res) => {
+    const headers = res.headers;
+
+    if ("X-Robots-Tag" in headers) {
+      callback(null, {
+        statusCode: 500,
+        body: `The page ${url} contains the "X-Robots-Tag" header`
+      });
+
+    } else {
+      callback(null, {
+        statusCode: 200,
+        body: "All clear!"
+      })
+    }
+  }).on('error', handleError);
 }
