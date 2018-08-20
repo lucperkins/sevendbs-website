@@ -1,12 +1,13 @@
-const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '',
-      { IncomingWebhook } = require('@slack/client'),
-      webhook = new IncomingWebhook(slackWebhookUrl);
+const { IncomingWebhook } = require('@slack/client');
+const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
 
 if (!slackWebhookUrl) {
-  console.error("You must specify a Slack webhook URL using the SLACK_WEBHOOK_URL environment variable");
+  console.log("You must specify a Slack webhook URL using the SLACK_WEBHOOK_URL environment variable");
   process.exitCode = 1;
   return;
 }
+
+const webhook = new IncomingWebhook(slackWebhookUrl);
 
 exports.handler = (event, context, callback) => {
   webhook.send('Here is a test message', (err, res) => {
