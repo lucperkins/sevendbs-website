@@ -22,6 +22,6 @@ exports.handler = (event, context, callback) => {
   });
 
   req.on('error', (e) => console.log(e));
-  req.write(slackMessage);
+  req.write(JSON.stringify(slackMessage));
   req.end();
 }
