@@ -6,7 +6,7 @@ const webhook = new IncomingWebhook(slackWebhookUrl);
 
 const sendSlackMessage = (msg) => {
   const slackMessageObject = {
-    username: 
+    username: "Indexing checker",
     text: msg
   }
 
