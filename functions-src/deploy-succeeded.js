@@ -21,7 +21,7 @@ const sendSlackErrorMessage = (msg) => {
 exports.handler = (event, context, callback) => {
   fetch('https://7dbs.io')
     .then(res => {
-      const headers = res.headers;
+      const headers = res.headers.raw();
       if ('X-Robots-Tag' in headers) {
         const msg = `WARNING: X-Robots-Tag found in main page headers.\n\nCurrent headers: ${JSON.stringify(headers)}`;
         sendSlackErrorMessage(msg);
