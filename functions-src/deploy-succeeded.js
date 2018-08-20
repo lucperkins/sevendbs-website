@@ -23,8 +23,7 @@ exports.handler = (event, context, callback) => {
   fetch('https://7dbs.io')
     .then(res => {
       const headers = res.headers.raw();
-      console.log(JSON.stringify(headers));
-      if ('X-Robots-Tag' in headers && (headers.get('X-Robots-Tag') == "noindex")) {
+      if ('x-robots-tag' in headers && (headers.get('x-robots-tag') == "noindex")) {
         sendSlackMessage(`WARNING: X-Robots-Tag found in main page headers.\n\nCurrent headers: ${JSON.stringify(headers)}`);
       } else {
         sendSlackMessage("No X-Robots-Tag header present. All clear!");
