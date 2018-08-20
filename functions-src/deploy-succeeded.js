@@ -1,5 +1,5 @@
 const { IncomingWebhook } = require('@slack/client'),
-      fetch = require('node-fetch');
+      fetch = require('node-fetch').default;
 
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(slackWebhookUrl);
