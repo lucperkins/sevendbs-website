@@ -1,7 +1,7 @@
 const https = require('https'),
       { IncomingWebhook } = require('@slack/client'),
       slackWebhookUrl = process.env.SLACK_WEBHOOK_URL,
-      url = 'https://7dbs.io';
+      pageUrl = 'https://7dbs.io';
 
 const webhook = new IncomingWebhook(slackWebhookUrl);
 
@@ -21,19 +21,19 @@ exports.handler = (event, context, callback) => {
   console.log("Printing event:");
   console.log(event);
 
-  https.get(url, (res) => {
+  https.get(pageUrl, (res) => {
     const headers = res.headers;
 
     if ("X-Robots-Tag" in headers) {
       console.error("X-Robots-Tag header present");
 
-      const msg = `WARNING: The page ${url} contains the "X-Robots-Tag" header`;
+      const msg = `WARNING: The page ${pageUrl} contains the "X-Robots-Tag" header`;
 
       webhook.send(msg, handleWebhookResponse);
 
       callback(null, {
         statusCode: 500,
-        body: `The page ${url} contains the "X-Robots-Tag" header`
+        body: `The page ${pageUrl} contains the "X-Robots-Tag" header`
       });
 
     } else {
