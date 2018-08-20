@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "devDependencies": {
+    "dotenv": "^6.0.0",
+    "netlify-lambda": "^0.4.0",
+    "webpack": "^4.16.5"
+  }
+}
