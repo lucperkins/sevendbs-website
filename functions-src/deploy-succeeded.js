@@ -24,7 +24,7 @@ exports.handler = (event, context, callback) => {
     .then(res => {
       const headers = res.headers;
       if ('x-robots-tag' in headers.raw() && (headers.get('x-robots-tag') == "noindex")) {
-        sendSlackMessage(`WARNING: X-Robots-Tag found in main page headers.\n\nCurrent headers: ${headers.raw()}`);
+        sendSlackMessage("WARNING: X-Robots-Tag found in main page headers.");
       } else {
         sendSlackMessage("No X-Robots-Tag header present. All clear!");
       }
