@@ -8,6 +8,7 @@ clean:
 build: build-functions build-site
 
 build-functions:
+	yarn
 	$(NETLIFY_LAMBDA) build functions-src
 
 build-site: clean
