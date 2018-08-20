@@ -5,25 +5,16 @@ const https = require('https'),
 
 const webhook = new IncomingWebhook(slackWebhookUrl);
 
-const handleResponse = (res) => {
-  const headers = res.headers;
-
-  if ("X-Robots-Tag" in headers) {
-    callback(null, {
-      statusCode: 500,
-      body: `The page ${url} contains the "X-Robots-Tag" header`
-    });
-
-  } else {
-    callback(null, {
-      statusCode: 200,
-      body: "All clear!"
-    })
-  }
-}
-
 const handleError = (e) => {
   console.error(e);
+}
+
+const handleWebhookResponse = (res, err) => {
+  if (err) {
+    console.err(`Slack webhook error: ${err}`);
+  } else {
+    console.log(`Message received from Slack: ${res}`);
+  }
 }
 
 exports.handler = (event, context, callback) => {
@@ -38,13 +29,7 @@ exports.handler = (event, context, callback) => {
 
       const msg = `WARNING: The page ${url} contains the "X-Robots-Tag" header`;
 
-      webhook.send(msg, (res, err) => {
-        if (err) {
-          console.err(`Slack webhook error: ${err}`);
-        } else {
-          console.log(`Message received from Slack: ${res}`);
-        }
-      });
+      webhook.send(msg, handleWebhookResponse);
 
       callback(null, {
         statusCode: 500,
@@ -56,13 +41,7 @@ exports.handler = (event, context, callback) => {
 
       const msg = "Page deployment succeeded!";
 
-      webhook.send(msg, (res, err) => {
-        if (err) {
-          console.err(`Slack webhook error: ${err}`);
-        } else {
-          console.log(`Message received from Slack: ${res}`);
-        }
-      });
+      webhook.send(msg, handleWebhookResponse);
 
       callback(null, {
         statusCode: 200,
