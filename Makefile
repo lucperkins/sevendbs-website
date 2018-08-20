@@ -1,15 +1,17 @@
-HUGO         = hugo
-NODE_BIN     = node_modules/.bin
-GULP         = $(NODE_BIN)/gulp
-CONCURRENTLY = $(NODE_BIN)/concurrently
+HUGO           = hugo
+NODE_BIN       = node_modules/.bin
+NETLIFY_LAMBDA = $(NODE_BIN)/netlify-lambda
 
 clean:
 	rm -rf public/
 
+build: build-functions build-site
+
+build-functions:
+	$(NETLIFY_LAMBDA) build functions-src
+
 build-site: clean
 	$(HUGO)
-
-netlify-build: build-assets build-site
 
 serve:
 	hugo server --disableFastRender --ignoreCache --bind 0.0.0.0
