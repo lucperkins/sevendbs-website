@@ -4,7 +4,7 @@ const { IncomingWebhook } = require('@slack/client'),
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(slackWebhookUrl);
 
-const sendSlackErrorMessage = (msg) => {
+const sendSlackMessage = (msg) => {
   const slackMessageObject = {
     text: msg
   }
@@ -24,7 +24,9 @@ exports.handler = (event, context, callback) => {
       const headers = res.headers.raw();
       if ('X-Robots-Tag' in headers) {
         const msg = `WARNING: X-Robots-Tag found in main page headers.\n\nCurrent headers: ${JSON.stringify(headers)}`;
-        sendSlackErrorMessage(msg);
+        sendSlackMessage(msg);
+      } else {
+        sendSlackMessage("No X-Robots-Tag header present. All clear!");
       }
     });
 }
