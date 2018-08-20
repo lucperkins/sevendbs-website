@@ -22,8 +22,8 @@ const sendSlackMessage = (msg) => {
 exports.handler = (event, context, callback) => {
   fetch('https://7dbs.io')
     .then(res => {
-      const headers = res.headers.raw();
-      if ('x-robots-tag' in headers && (headers.get('x-robots-tag') == "noindex")) {
+      const headers = res.headers;
+      if ('x-robots-tag' in headers.raw() && (headers.get('x-robots-tag') == "noindex")) {
         sendSlackMessage(`WARNING: X-Robots-Tag found in main page headers.\n\nCurrent headers: ${JSON.stringify(headers)}`);
       } else {
         sendSlackMessage("No X-Robots-Tag header present. All clear!");
