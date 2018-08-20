@@ -6,6 +6,7 @@
     "bulma": "^0.7.1",
     "dotenv": "^6.0.0",
     "netlify-lambda": "^0.4.0",
+    "node-fetch": "^2.2.0",
     "webpack": "^4.16.5"
   }
 }
