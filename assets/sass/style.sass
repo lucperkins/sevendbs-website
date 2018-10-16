@@ -7,6 +7,9 @@
   border: 1px solid $black
   width: 70%
 
+.icon + .icon-text
+  margin-left: .5rem
+
 .is-mega
   font-size: 6rem
 
@@ -41,3 +44,25 @@ $family-primary: $family-sans-serif
 $link: darken($info, 5%)
 
 @import ../../node_modules/bulma/bulma
+
+.table
+  border: none
+
+  thead
+    border-bottom: 3px solid $grey-lighter
+
+    tr
+      th
+        font-size: 1.5rem
+        padding-left: .9rem
+
+        &:first-of-type
+          width: 25%
+
+  tbody
+    tr
+      td
+        font-size: 1.25rem
+        a
+          font-weight: 600
+          color: $link
