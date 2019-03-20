@@ -4,4 +4,4 @@ functions = "functions"
 command = "make build"
 
 [context.production.environment]
-HUGO_VERSION = "0.46"
+HUGO_VERSION = "0.53"
